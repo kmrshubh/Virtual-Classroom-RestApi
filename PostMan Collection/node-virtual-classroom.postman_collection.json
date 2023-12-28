@@ -1,0 +1,303 @@
+{
+	"info": {
+		"_postman_id": "d516897d-d13d-434e-84a1-b72b5be6fe07",
+		"name": "node-virtual-classroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14311528"
+	},
+	"item": [
+		{
+			"name": "localhost:3000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser2\",\r\n  \"password\": \"abcd\",\r\n  \"role\": \"student\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/register",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/auth tutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"tutor2\",\r\n    \"password\": \"xyz\",\r\n    \"role\": \"tutor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/auth student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"student2\",\r\n    \"password\": \"abc\",\r\n    \"role\": \"student\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1dG9yMiIsInJvbGUiOiJ0dXRvciIsImlhdCI6MTcwMjc0MDg4OCwiZXhwIjoxNzAyNzQ0NDg4fQ.kSrcgBwCMG0Hb-EeQ8XjcmM_sKBWBqy_9h4huY3WAlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"assignment2\",\r\n    \"description\": \"description of assignment1\",\r\n    \"assignedStudents\": \"student1,student2\",\r\n    \"publishedAt\": \"2023-12-18\",\r\n    \"deadlineDate\": \"2023-12-20\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/assignments",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments/<name>",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0dWRlbnQyIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3MDI3NDExNDYsImV4cCI6MTcwMjc0NDc0Nn0.UTD_ZW9mTM3X_oU_T5OPDCideXn72peiK3ROYB7zs_g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/assignments/assignment2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignments",
+						"assignment2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments/<name>",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1dG9yMiIsInJvbGUiOiJ0dXRvciIsImlhdCI6MTcwMjc0MDg4OCwiZXhwIjoxNzAyNzQ0NDg4fQ.kSrcgBwCMG0Hb-EeQ8XjcmM_sKBWBqy_9h4huY3WAlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"testassignment\",\r\n    \"description\": \"description changed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/assignments/assignment2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignments",
+						"assignment2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments/<name>",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1dG9yMiIsInJvbGUiOiJ0dXRvciIsImlhdCI6MTcwMjc0MDg4OCwiZXhwIjoxNzAyNzQ0NDg4fQ.kSrcgBwCMG0Hb-EeQ8XjcmM_sKBWBqy_9h4huY3WAlc",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/assignments/testassignment",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignments",
+						"testassignment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments/<name>/submission",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InN0dWRlbnQyIiwicm9sZSI6InN0dWRlbnQiLCJpYXQiOjE3MDI3NDExNDYsImV4cCI6MTcwMjc0NDc0Nn0.UTD_ZW9mTM3X_oU_T5OPDCideXn72peiK3ROYB7zs_g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"submission\": \"hello\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/assignments/assignment2/submission",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignments",
+						"assignment2",
+						"submission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/assignments/feed",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InR1dG9yMiIsInJvbGUiOiJ0dXRvciIsImlhdCI6MTcwMjc0MDg4OCwiZXhwIjoxNzAyNzQ0NDg4fQ.kSrcgBwCMG0Hb-EeQ8XjcmM_sKBWBqy_9h4huY3WAlc",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/assignmentsfeed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"assignmentsfeed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
